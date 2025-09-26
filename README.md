@@ -47,7 +47,7 @@ Each router would be interconnected for cross-departmental communication.
 
 ---
 
-Action 2: Cabling the Network
+## Action 2: Cabling the Network
 
 I then connected all devices logically using appropriate cables.
 
@@ -92,6 +92,62 @@ Gateway: 192.168.1.1
 Repeat for all devices in all the departments.
 
 <img width="1052" height="820" alt="image" src="https://github.com/user-attachments/assets/b4bb5e01-88fc-4f5c-bd93-7c03d0682bc2" />
+
+---
+
+## Story Part 4: Routing Between Departments
+
+Now, it was time to ensure the three routers could talk to each other and allow inter-department communication. I decided to implement ospf [open shortest path first] on connecting network interfaces for clarity.
+
+## Action 4: Configuring Routers
+
+## Command:
+On Router 1:
+enable
+config t
+router ospf 1
+network 192.168.1.0 0.0.0.255 area 0
+network 192.168.4.0 0.0.0.255 area 0
+network 192.168.6.0 0.0.0.255 area 0
+end
+(Repeat similar steps for Router 2 and Router 3 with their subnets and connections.)
+
+<img width="1039" height="436" alt="image" src="https://github.com/user-attachments/assets/c162a807-1b82-4b90-af55-03fbc26d489e" />
+
+---
+
+## Story Part 5: Testing Connectivity
+
+Once everything was configured, I tested connectivity using the ping command. Finance needed to be able to ping Research and Support successfully.
+
+## Action 5: Ping Test
+
+## Command
+
+On Finance PC1:
+ping 192.168.2.2 {pc in research}
+
+<img width="1040" height="498" alt="image" src="https://github.com/user-attachments/assets/d305e1be-ac76-4013-a361-0e035c576320" />
+
+On Finance PC1:
+ping 192.168.3.2 {pc in support}
+
+<img width="752" height="306" alt="image" src="https://github.com/user-attachments/assets/c5751748-3213-47d2-b595-2b6d08989170" />
+
+Expected Result → Successful replies
+
+---
+
+## Conclusion (Story Wrap-Up)
+
+TechNova Solutions now had a robust, scalable, and logical network topology. Each department had its own subnet, all routers were interconnected for communication, and the CTO could finally scale confidently as the company grew.
+
+The project wasn’t just about building a network—it was about solving a real-world business problem through structured design, technical precision, and storytelling that even non-technical stakeholders could appreciate.
+
+<img width="1915" height="1013" alt="image" src="https://github.com/user-attachments/assets/302e9515-253e-43f8-8893-795b666cc127" />
+
+
+
 
 
 
