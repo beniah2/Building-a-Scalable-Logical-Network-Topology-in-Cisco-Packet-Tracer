@@ -107,8 +107,11 @@ enable
 config t
 router ospf 1
 network 192.168.1.0 0.0.0.255 area 0
+
 network 192.168.4.0 0.0.0.255 area 0
+
 network 192.168.6.0 0.0.0.255 area 0
+
 end
 (Repeat similar steps for Router 2 and Router 3 with their subnets and connections.)
 
