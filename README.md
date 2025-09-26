@@ -117,6 +117,7 @@ network 192.168.4.0 0.0.0.255 area 0
 network 192.168.6.0 0.0.0.255 area 0
 
 end
+
 (Repeat similar steps for Router 2 and Router 3 with their subnets and connections.)
 
 <img width="1039" height="436" alt="image" src="https://github.com/user-attachments/assets/c162a807-1b82-4b90-af55-03fbc26d489e" />
